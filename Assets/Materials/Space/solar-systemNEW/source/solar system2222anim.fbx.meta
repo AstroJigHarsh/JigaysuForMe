@@ -1,0 +1,348 @@
+fileFormatVersion: 2
+guid: a78496bb40df0c7408f5933d1f2b0942
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_002
+    second: {fileID: 2100000, guid: ef16b8b94f472a84583d4968b0b8f91a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_003
+    second: {fileID: 2100000, guid: 35fa48400ea9bf940bbe287397a26089, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_004
+    second: {fileID: 2100000, guid: 7d15a378cb48c75498268136954f7d5f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_005
+    second: {fileID: 2100000, guid: 06957cfde0351b14cbed61d98e968e22, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_006
+    second: {fileID: 2100000, guid: de3c680fadb70f64ea23cfb001dfec85, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_007
+    second: {fileID: 2100000, guid: 2a6caa8336a25444986d69b880ffd080, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_008
+    second: {fileID: 2100000, guid: ec28f6f0174d07948a4730c0361c7cfe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_009
+    second: {fileID: 2100000, guid: b137fea563feae149ae07dcffb894a82, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_010
+    second: {fileID: 2100000, guid: 0fe5e7004ccf1424a96f5432d36cbca0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_011
+    second: {fileID: 2100000, guid: b93b194831f65f4468bbd9597063dc33, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: unnamed
+    second: {fileID: 2100000, guid: 100ecfef9ef592b4dafd409c9fde9a84, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Default Take
+      takeName: Default Take
+      internalID: 1989289236423521904
+      firstFrame: -1
+      lastFrame: 419
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton:
+    - name: solar system2222anim(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Torus_007
+      parentName: solar system2222anim(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 6.3173733, y: 6.3173733, z: 6.3173733}
+    - name: Torus_006
+      parentName: solar system2222anim(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 5.360654, y: 5.360654, z: 5.360654}
+    - name: Torus_005
+      parentName: solar system2222anim(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 4.5307655, y: 4.5307655, z: 4.5307655}
+    - name: Torus_004
+      parentName: solar system2222anim(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 3.4852705, y: 3.4852705, z: 3.4852705}
+    - name: Torus_003
+      parentName: solar system2222anim(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 2.509629, y: 2.509629, z: 2.509629}
+    - name: Torus_002
+      parentName: solar system2222anim(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1.8318273, y: 1.8318273, z: 1.8318273}
+    - name: Torus_000
+      parentName: solar system2222anim(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1.325531, y: 1.325531, z: 1.325531}
+    - name: Torus_001
+      parentName: solar system2222anim(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: BezierCircle_008
+      parentName: solar system2222anim(Clone)
+      position: {x: -0.00016059636, y: -0.00873282, z: 0.00083378924}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 74.65602, y: 74.65602, z: 74.65602}
+    - name: Sphere_008
+      parentName: BezierCircle_008
+      position: {x: 0.008412863, y: -0.005410788, z: 0.000113024325}
+      rotation: {x: 0, y: 0, z: 0.0073907888, w: 0.9999727}
+      scale: {x: 0.03056444, y: 0.03056444, z: 0.03056444}
+    - name: BezierCircle_007
+      parentName: solar system2222anim(Clone)
+      position: {x: -0.00016059636, y: -0.00873282, z: 0.00083378924}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 63.31462, y: 63.31462, z: 63.31462}
+    - name: Sphere_007
+      parentName: BezierCircle_007
+      position: {x: 0.007953772, y: 0.006108338, z: 0.00013327006}
+      rotation: {x: 0.00000003026297, y: -0.000000029798572, z: 0.008168668, w: 0.9999667}
+      scale: {x: 0.020455256, y: 0.02045526, z: 0.020455254}
+    - name: BezierCircle_006
+      parentName: solar system2222anim(Clone)
+      position: {x: -0.00016059636, y: -0.00873282, z: 0.00083378924}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 53.52874, y: 53.52874, z: 53.52874}
+    - name: Sphere_006
+      parentName: BezierCircle_006
+      position: {x: -0.0034387116, y: 0.009297228, z: 0.00015763228}
+      rotation: {x: -0.000000059602154, y: -5.4415344e-10, z: -0.5702933, w: 0.8214411}
+      scale: {x: 0.034510534, y: 0.034510534, z: 0.03451053}
+    - name: BezierCircle_005
+      parentName: solar system2222anim(Clone)
+      position: {x: -0.00016059636, y: -0.00873282, z: 0.00083378924}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 41.142292, y: 41.142292, z: 41.142292}
+    - name: Sphere_005
+      parentName: BezierCircle_005
+      position: {x: -0.00491229, y: -0.008631989, z: 0.00020509181}
+      rotation: {x: 7.3867257e-10, y: 7.735149e-10, z: -0.025375031, w: 0.999678}
+      scale: {x: 0.066435166, y: 0.066435166, z: 0.066435166}
+    - name: BezierCircle_004
+      parentName: solar system2222anim(Clone)
+      position: {x: -0.00016059636, y: -0.00873282, z: 0.00083378924}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 29.634474, y: 29.634474, z: 29.634474}
+    - name: Sphere
+      parentName: BezierCircle_004
+      position: {x: 0.005426296, y: 0.008353222, z: 0.00028473252}
+      rotation: {x: 0.000000059600396, y: 7.1158135e-10, z: 0.87738055, w: -0.47979516}
+      scale: {x: 0.055422, y: 0.055422004, z: 0.055422}
+    - name: BezierCircle_002
+      parentName: solar system2222anim(Clone)
+      position: {x: -0.00016059636, y: -0.00873282, z: 0.00083378924}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 21.573761, y: 21.573761, z: 21.573761}
+    - name: Sphere_003
+      parentName: BezierCircle_002
+      position: {x: 0.0009953084, y: -0.009884078, z: 0.0007184044}
+      rotation: {x: -0.16028458, y: 0.48222616, z: 0.011139095, w: 0.8611868}
+      scale: {x: 0.07589321, y: 0.075893216, z: 0.07589321}
+    - name: BezierCircle_003
+      parentName: Sphere_003
+      position: {x: -0.000000006290894, y: 0.000000015806522, z: -5.4840693e-10}
+      rotation: {x: -0.00000006033428, y: -1.540555e-11, z: -0.20193763, w: 0.97939837}
+      scale: {x: 1.5974711, y: 1.5974709, z: 1.597471}
+    - name: Sphere_010
+      parentName: BezierCircle_003
+      position: {x: -0.007431269, y: -0.0064475285, z: 0.0005593091}
+      rotation: {x: 0.0000001006243, y: -0.000000040543792, z: 0.7641478, w: 0.64504117}
+      scale: {x: 0.11002742, y: 0.11002743, z: 0.11002746}
+    - name: BezierCircle_001
+      parentName: solar system2222anim(Clone)
+      position: {x: -0.00016059636, y: -0.00873282, z: 0.00083378924}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 15.5933485, y: 15.5933485, z: 15.5933485}
+    - name: Sphere_009
+      parentName: BezierCircle_001
+      position: {x: -0.0063429973, y: 0.007490038, z: 0.0007184045}
+      rotation: {x: 0, y: 0, z: 0.015520088, w: 0.9998796}
+      scale: {x: 0.075893216, y: 0.07589322, z: 0.07589322}
+    - name: BezierCircle
+      parentName: solar system2222anim(Clone)
+      position: {x: -0.00016059636, y: -0.00873282, z: 0.00083378924}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 11.745397, y: 11.745397, z: 11.745397}
+    - name: Sphere_002
+      parentName: BezierCircle
+      position: {x: -0.010049852, y: -0.000480573, z: 0.0007184056}
+      rotation: {x: 0.000000059604645, y: -2.2688126e-14, z: 0.031036269, w: 0.9995183}
+      scale: {x: 0.061984815, y: 0.061984822, z: 0.06198482}
+    - name: Sphere_001
+      parentName: solar system2222anim(Clone)
+      position: {x: -0.00016059636, y: -0.00873282, z: 0.00083378924}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 5.336877, y: 5.336877, z: 5.336877}
+    - name: Sun
+      parentName: solar system2222anim(Clone)
+      position: {x: -0, y: 0.05740093, z: 0}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lamp_001
+      parentName: solar system2222anim(Clone)
+      position: {x: -0.00009686887, y: -0.009210491, z: 0.00077677576}
+      rotation: {x: 0.52327543, y: -0.34203392, z: 0.72694236, w: 0.28416628}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Lamp
+      parentName: solar system2222anim(Clone)
+      position: {x: -0.00009686887, y: -0.009210491, z: 0.00077677576}
+      rotation: {x: 0.52327543, y: -0.34203392, z: 0.72694236, w: 0.28416628}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
