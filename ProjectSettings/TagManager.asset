@@ -9,6 +9,7 @@ TagManager:
   - NPC
   - Car
   - Gate 3
+  - Gate
   layers:
   - Default
   - TransparentFX
