@@ -10,7 +10,10 @@ TrueTypeFontImporter:
   includeFontData: 1
   fontNames:
   - Edu QLD Beginner
-  fallbackFontReferences: []
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 982738fc45b548f488faee53da8a45d6, type: 3}
+  - {fileID: 12800000, guid: 3ab95c4e248a7664486e38ed70d41b74, type: 3}
+  - {fileID: 12800000, guid: 397be4292b5efff449b4358c24b24a98, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1
