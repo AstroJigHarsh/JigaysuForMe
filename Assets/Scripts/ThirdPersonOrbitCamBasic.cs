@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Photon.Pun;
 
 // This class corresponds to the 3rd person camera features.
 public class ThirdPersonOrbitCamBasic : MonoBehaviour 
@@ -31,70 +32,78 @@ public class ThirdPersonOrbitCamBasic : MonoBehaviour
 
 	void Awake()
 	{
-		// Reference to the camera transform.
-		cam = transform;
+		
+		
+            // Reference to the camera transform.
+            cam = transform;
 
-		// Set camera default position.
-		cam.position = player.position + Quaternion.identity * pivotOffset + Quaternion.identity * camOffset;
-		cam.rotation = Quaternion.identity;
+            // Set camera default position.
+            cam.position = player.position + Quaternion.identity * pivotOffset + Quaternion.identity * camOffset;
+            cam.rotation = Quaternion.identity;
 
-		// Set up references and default values.
-		smoothPivotOffset = pivotOffset;
-		smoothCamOffset = camOffset;
-		defaultFOV = cam.GetComponent<Camera>().fieldOfView;
-		angleH = player.eulerAngles.y;
+            // Set up references and default values.
+            smoothPivotOffset = pivotOffset;
+            smoothCamOffset = camOffset;
+            defaultFOV = cam.GetComponent<Camera>().fieldOfView;
+            angleH = player.eulerAngles.y;
 
-		ResetTargetOffsets ();
-		ResetFOV ();
-		ResetMaxVerticalAngle();
+            ResetTargetOffsets();
+            ResetFOV();
+            ResetMaxVerticalAngle();
 
-		// Check for no vertical offset.
-		if (camOffset.y > 0)
-			Debug.LogWarning("Vertical Cam Offset (Y) will be ignored during collisions!\n" +
-				"It is recommended to set all vertical offset in Pivot Offset.");
+            // Check for no vertical offset.
+            if (camOffset.y > 0)
+                Debug.LogWarning("Vertical Cam Offset (Y) will be ignored during collisions!\n" +
+                    "It is recommended to set all vertical offset in Pivot Offset.");
+        
+		
 	}
 
 	void Update()
 	{
-		// Get mouse movement to orbit the camera.
-		// Mouse:
-		angleH += Mathf.Clamp(Input.GetAxis("Mouse X"), -1, 1) * horizontalAimingSpeed;
-		angleV += Mathf.Clamp(Input.GetAxis("Mouse Y"), -1, 1) * verticalAimingSpeed;
-		// Joystick:
-		angleH += Mathf.Clamp(Input.GetAxis(XAxis), -1, 1) * 60 * horizontalAimingSpeed * Time.deltaTime;
-		angleV += Mathf.Clamp(Input.GetAxis(YAxis), -1, 1) * 60 * verticalAimingSpeed * Time.deltaTime;
+        
+		
+            // Get mouse movement to orbit the camera.
+            // Mouse:
+            angleH += Mathf.Clamp(Input.GetAxis("Mouse X"), -1, 1) * horizontalAimingSpeed;
+            angleV += Mathf.Clamp(Input.GetAxis("Mouse Y"), -1, 1) * verticalAimingSpeed;
+            // Joystick:
+            angleH += Mathf.Clamp(Input.GetAxis(XAxis), -1, 1) * 60 * horizontalAimingSpeed * Time.deltaTime;
+            angleV += Mathf.Clamp(Input.GetAxis(YAxis), -1, 1) * 60 * verticalAimingSpeed * Time.deltaTime;
 
-		// Set vertical movement limit.
-		angleV = Mathf.Clamp(angleV, minVerticalAngle, targetMaxVerticalAngle);
+            // Set vertical movement limit.
+            angleV = Mathf.Clamp(angleV, minVerticalAngle, targetMaxVerticalAngle);
 
-		// Set camera orientation.
-		Quaternion camYRotation = Quaternion.Euler(0, angleH, 0);
-		Quaternion aimRotation = Quaternion.Euler(-angleV, angleH, 0);
-		cam.rotation = aimRotation;
+            // Set camera orientation.
+            Quaternion camYRotation = Quaternion.Euler(0, angleH, 0);
+            Quaternion aimRotation = Quaternion.Euler(-angleV, angleH, 0);
+            cam.rotation = aimRotation;
 
-		// Set FOV.
-		cam.GetComponent<Camera>().fieldOfView = Mathf.Lerp (cam.GetComponent<Camera>().fieldOfView, targetFOV,  Time.deltaTime);
+            // Set FOV.
+            cam.GetComponent<Camera>().fieldOfView = Mathf.Lerp(cam.GetComponent<Camera>().fieldOfView, targetFOV, Time.deltaTime);
 
-		// Test for collision with the environment based on current camera position.
-		Vector3 baseTempPosition = player.position + camYRotation * targetPivotOffset;
-		Vector3 noCollisionOffset = targetCamOffset;
-		while (noCollisionOffset.magnitude >= 0.2f)
-		{
-			if (DoubleViewingPosCheck(baseTempPosition + aimRotation * noCollisionOffset))
-				break;
-			noCollisionOffset -= noCollisionOffset.normalized * 0.2f;
-		}
-		if (noCollisionOffset.magnitude < 0.2f)
-			noCollisionOffset = Vector3.zero;
+            // Test for collision with the environment based on current camera position.
+            Vector3 baseTempPosition = player.position + camYRotation * targetPivotOffset;
+            Vector3 noCollisionOffset = targetCamOffset;
+            while (noCollisionOffset.magnitude >= 0.2f)
+            {
+                if (DoubleViewingPosCheck(baseTempPosition + aimRotation * noCollisionOffset))
+                    break;
+                noCollisionOffset -= noCollisionOffset.normalized * 0.2f;
+            }
+            if (noCollisionOffset.magnitude < 0.2f)
+                noCollisionOffset = Vector3.zero;
 
-		// No intermediate position for custom offsets, go to 1st person.
-		bool customOffsetCollision = isCustomOffset && noCollisionOffset.sqrMagnitude < targetCamOffset.sqrMagnitude;
+            // No intermediate position for custom offsets, go to 1st person.
+            bool customOffsetCollision = isCustomOffset && noCollisionOffset.sqrMagnitude < targetCamOffset.sqrMagnitude;
 
-		// Reposition the camera.
-		smoothPivotOffset = Vector3.Lerp(smoothPivotOffset, customOffsetCollision ? pivotOffset : targetPivotOffset, smooth * Time.deltaTime);
-		smoothCamOffset = Vector3.Lerp(smoothCamOffset, customOffsetCollision ? Vector3.zero : noCollisionOffset, smooth * Time.deltaTime);
+            // Reposition the camera.
+            smoothPivotOffset = Vector3.Lerp(smoothPivotOffset, customOffsetCollision ? pivotOffset : targetPivotOffset, smooth * Time.deltaTime);
+            smoothCamOffset = Vector3.Lerp(smoothCamOffset, customOffsetCollision ? Vector3.zero : noCollisionOffset, smooth * Time.deltaTime);
 
-		cam.position =  player.position + camYRotation * smoothPivotOffset + aimRotation * smoothCamOffset;
+            cam.position = player.position + camYRotation * smoothPivotOffset + aimRotation * smoothCamOffset;
+        
+        
 	}
 
 	// Set camera offsets to custom values.

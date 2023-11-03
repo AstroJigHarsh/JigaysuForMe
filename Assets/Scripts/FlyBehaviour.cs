@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Photon.Pun;
 
 
 public class FlyBehaviour : GenericBehaviour
@@ -28,42 +29,45 @@ public class FlyBehaviour : GenericBehaviour
 	
 	void Update()
 	{
-		
-		if (Input.GetButtonDown(flyButton) && !behaviourManager.IsOverriding() 
-			&& !behaviourManager.GetTempLockStatus(behaviourManager.GetDefaultBehaviour))
+        if (GetComponent<PhotonView>().IsMine == true)
 		{
-			fly = !fly;
+            if (Input.GetButtonDown(flyButton) && !behaviourManager.IsOverriding()
+            && !behaviourManager.GetTempLockStatus(behaviourManager.GetDefaultBehaviour))
+            {
+                fly = !fly;
 
-			
-			behaviourManager.UnlockTempBehaviour(behaviourManager.GetDefaultBehaviour);
 
-			
-			behaviourManager.GetRigidBody.useGravity = !fly;
+                behaviourManager.UnlockTempBehaviour(behaviourManager.GetDefaultBehaviour);
 
-			// Player is flying.
-			if (fly)
-			{
-				
-				behaviourManager.RegisterBehaviour(this.behaviourCode);
-				Trail1.SetActive(true);
-				Trail2.SetActive(true);
-				Trail3.SetActive(true);
-				Trail4.SetActive(true);
-			}
-			else
-			{
-			
-				col.direction = 1;
-				// Set camera default offset.
-				behaviourManager.GetCamScript.ResetTargetOffsets();
 
-				
-				behaviourManager.UnregisterBehaviour(this.behaviourCode);
-                Trail1.SetActive(false);
-                Trail2.SetActive(false);
-                Trail3.SetActive(false);
-                Trail4.SetActive(false);
+                behaviourManager.GetRigidBody.useGravity = !fly;
+
+                // Player is flying.
+                if (fly)
+                {
+
+                    behaviourManager.RegisterBehaviour(this.behaviourCode);
+                    Trail1.SetActive(true);
+                    Trail2.SetActive(true);
+                    Trail3.SetActive(true);
+                    Trail4.SetActive(true);
+                }
+                else
+                {
+
+                    col.direction = 1;
+                    // Set camera default offset.
+                    behaviourManager.GetCamScript.ResetTargetOffsets();
+
+
+                    behaviourManager.UnregisterBehaviour(this.behaviourCode);
+                    Trail1.SetActive(false);
+                    Trail2.SetActive(false);
+                    Trail3.SetActive(false);
+                    Trail4.SetActive(false);
+                }
             }
+            
 		}
 
 		
@@ -83,11 +87,15 @@ public class FlyBehaviour : GenericBehaviour
 	
 	public override void LocalFixedUpdate()
 	{
-		
-		behaviourManager.GetCamScript.SetMaxVerticalAngle(flyMaxVerticalAngle);
+		if (GetComponent<PhotonView>().IsMine == true)
+		{
+            behaviourManager.GetCamScript.SetMaxVerticalAngle(flyMaxVerticalAngle);
 
-		
-		FlyManagement(behaviourManager.GetH, behaviourManager.GetV);
+
+            FlyManagement(behaviourManager.GetH, behaviourManager.GetV);
+        }
+
+           
 	}
 	// Deal with the player movement when flying.
 	void FlyManagement(float horizontal, float vertical)

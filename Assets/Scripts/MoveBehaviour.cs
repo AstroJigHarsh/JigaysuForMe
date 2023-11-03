@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Photon.Pun;
+using UnityEngine;
 using UnityEngine.Serialization;
 
 // MoveBehaviour inherits from GenericBehaviour. This class corresponds to basic walk and run behaviour, it is the default behaviour.
@@ -38,33 +39,40 @@ public class MoveBehaviour : GenericBehaviour
     // Update is used to set features regardless the active behaviour.
     void Update()
     {
-        Crouch();
-        // Get jump input.
-        if (!jump && Input.GetButtonDown(jumpButton) && behaviourManager.IsCurrentBehaviour(this.behaviourCode) && !behaviourManager.IsOverriding())
+        if (GetComponent<PhotonView>().IsMine == true)
         {
-            jump = true;
+            Crouch();
+            // Get jump input.
+            if (!jump && Input.GetButtonDown(jumpButton) && behaviourManager.IsCurrentBehaviour(this.behaviourCode) && !behaviourManager.IsOverriding())
+            {
+                jump = true;
+            }
+            if (Crouching == true)
+            {
+                jumpHeight = 0f;
+                jumpInertialForce = 0f;
+            }
+            else
+            {
+                jumpHeight = 1.5f;
+                jumpInertialForce = 10f;
+            }
         }
-        if(Crouching == true)
-        {
-            jumpHeight = 0f;
-            jumpInertialForce = 0f;
-        }
-        else
-        {
-            jumpHeight = 1.5f;
-            jumpInertialForce = 10f;
-        }
+        
 
     }
 
     // LocalFixedUpdate overrides the virtual function of the base class.
     public override void LocalFixedUpdate()
     {
-        // Call the basic movement manager.
-        MovementManagement(behaviourManager.GetH, behaviourManager.GetV);
+        if (GetComponent<PhotonView>().IsMine == true)
+        {
+            // Call the basic movement manager.
+            MovementManagement(behaviourManager.GetH, behaviourManager.GetV);
 
-        // Call the jump manager.
-        JumpManagement();
+            // Call the jump manager.
+            JumpManagement();
+        }
     }
 
     // Execute the idle and walk/run jump movements.
