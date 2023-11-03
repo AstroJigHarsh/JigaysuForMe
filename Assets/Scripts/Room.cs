@@ -9,6 +9,6 @@ public class Room : MonoBehaviour
 
     public void JoinRoom()
     {
-        GameObject.Find("CreateAndJoin").GetComponent<CreateAndJoin>().JoinRoomInList(Name.text);
+        GameObject.Find("ManagerKallu").GetComponent<CreateAndJoin>().JoinRoomInList(Name.text);
     }
 }
