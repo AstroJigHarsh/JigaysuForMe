@@ -1,25 +1,63 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using PlayFab;
+using PlayFab.ClientModels;
+using TMPro;
 using UnityEngine.UI;
 using Photon.Pun;
-using TMPro;
-public class UserName : MonoBehaviour
-{
-    public TMP_Text Username;
-    public TMP_InputField SubmittedUsername;
-    public GameObject submitOff;
-    public GameObject SubmittedUsernameOff;
-    public GameObject UsernameOn;
 
-    // Update is called once per frame
-    public void Submit()
+public class PlayFabLoginManager : MonoBehaviour
+{
+    [Header("Screens")]
+    public GameObject LoginPanel;
+    public GameObject Lobby;
+
+    [Header("Login Screen")]
+    public TMP_InputField LoginEmailField;
+    public TMP_InputField LoginPasswordField;
+    public TMP_InputField LoginDisplayNameField;
+    public Button LoginBtn;
+
+
+    
+
+    
+    public void OpenLobbyPanel()
     {
-        Username.text = SubmittedUsername.text;
-        PhotonNetwork.NickName = SubmittedUsername.text;
-        UsernameOn.SetActive(true);
-        SubmittedUsernameOff.SetActive(false);
-        submitOff.SetActive(false);
         
+        LoginPanel.SetActive(false);
+
+        Lobby.SetActive(true);
     }
+    
+
+
+    public void OnTryLogin()
+    {
+        string email = LoginEmailField.text;
+        string password = LoginPasswordField.text;
+
+        LoginBtn.interactable = false;
+
+        var req = new LoginWithEmailAddressRequest
+        {
+            Email = email,
+            Password = password,
+        };
+
+        PlayFabClientAPI.LoginWithEmailAddress(req,
+        res =>
+        {
+            Debug.Log("Login Success");
+            PhotonNetwork.NickName = LoginDisplayNameField.text;
+            OpenLobbyPanel();
+        },
+        err =>
+        {
+            Debug.Log("Error: " + err.ErrorMessage);
+            LoginBtn.interactable = true;
+        });
+
+
+    }
+    
 }
