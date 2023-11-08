@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 0da6d172d18a54e4389d0dce1e1ffdf2
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 181360
+  packageName: Simple Account with Database
+  packageVersion: 1.0.2
+  assetPath: Assets/PlayFabSDK/PlayFab.asmdef
+  uploadId: 456192

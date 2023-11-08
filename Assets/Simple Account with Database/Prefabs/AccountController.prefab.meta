@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d7823c06dce1f4ceca12fd525a64b2f4
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 181360
+  packageName: Simple Account with Database
+  packageVersion: 1.0.2
+  assetPath: Assets/Simple Account with Database/Prefabs/AccountController.prefab
+  uploadId: 456192

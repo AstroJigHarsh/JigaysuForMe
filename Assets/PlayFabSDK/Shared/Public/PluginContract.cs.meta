@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 2e25ec8533eb4fe4fa7d39cc8dcda24c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 181360
+  packageName: Simple Account with Database
+  packageVersion: 1.0.2
+  assetPath: Assets/PlayFabSDK/Shared/Public/PluginContract.cs
+  uploadId: 456192

@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: d73f86b427d81044bb2417ea3b5b03ac
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 181360
+  packageName: Simple Account with Database
+  packageVersion: 1.0.2
+  assetPath: Assets/PlayFabSDK/Groups/PlayFabGroupsModels.cs
+  uploadId: 456192

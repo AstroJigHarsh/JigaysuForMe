@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 1c3bd18b65a5d8d4eb83e5ef98114e4d
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 181360
+  packageName: Simple Account with Database
+  packageVersion: 1.0.2
+  assetPath: Assets/PlayFabSDK/Localization/PlayFabEvents.cs
+  uploadId: 456192

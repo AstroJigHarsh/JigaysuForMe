@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 3e92542860dab28489c3d9cc0baa1ebd
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 181360
+  packageName: Simple Account with Database
+  packageVersion: 1.0.2
+  assetPath: Assets/PlayFabSDK/Shared/Editor/MakeSharedSettingsObj.cs
+  uploadId: 456192

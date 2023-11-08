@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: dc2c3070dc174cc45a4aaf1a5e38263d
+timeCreated: 1468524880
+licenseType: Pro
+TextScriptImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 181360
+  packageName: Simple Account with Database
+  packageVersion: 1.0.2
+  assetPath: Assets/PlayFabSDK/link.xml
+  uploadId: 456192

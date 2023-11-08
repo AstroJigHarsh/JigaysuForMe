@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 093286084a3d1994a9c28281a1c38b1d
+timeCreated: 1467748518
+licenseType: Pro
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 181360
+  packageName: Simple Account with Database
+  packageVersion: 1.0.2
+  assetPath: Assets/PlayFabSDK/Shared/Models/PlayFabSharedSettings.cs
+  uploadId: 456192

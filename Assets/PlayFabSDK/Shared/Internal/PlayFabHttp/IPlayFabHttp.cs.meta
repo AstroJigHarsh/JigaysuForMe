@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: aeac58284b4b1cd4ab93ab0e71ba8540
+timeCreated: 1462745280
+licenseType: Pro
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 181360
+  packageName: Simple Account with Database
+  packageVersion: 1.0.2
+  assetPath: Assets/PlayFabSDK/Shared/Internal/PlayFabHttp/IPlayFabHttp.cs
+  uploadId: 456192

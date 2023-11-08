@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: a5dd863da40a92a46b55d58a56b8db93
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 181360
+  packageName: Simple Account with Database
+  packageVersion: 1.0.2
+  assetPath: Assets/PlayFabSDK/Multiplayer/PlayFabMultiplayerAPI.cs
+  uploadId: 456192

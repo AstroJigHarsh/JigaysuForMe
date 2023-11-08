@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 9021fc3e0230b9a4db0f0e1b104b764b
+timeCreated: 1464569227
+licenseType: Pro
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 181360
+  packageName: Simple Account with Database
+  packageVersion: 1.0.2
+  assetPath: Assets/PlayFabSDK/Shared/Public/PlayFabDataGatherer.cs
+  uploadId: 456192

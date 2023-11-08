@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 04039b10ae9eebd46a8c4a5b401ea567
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 181360
+  packageName: Simple Account with Database
+  packageVersion: 1.0.2
+  assetPath: Assets/PlayFabSDK/Profiles/PlayFabProfilesAPI.cs
+  uploadId: 456192

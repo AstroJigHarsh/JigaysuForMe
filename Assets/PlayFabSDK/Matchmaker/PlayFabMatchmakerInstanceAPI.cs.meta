@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 77057761a62cdb648960d924f1b322af
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 181360
+  packageName: Simple Account with Database
+  packageVersion: 1.0.2
+  assetPath: Assets/PlayFabSDK/Matchmaker/PlayFabMatchmakerInstanceAPI.cs
+  uploadId: 456192

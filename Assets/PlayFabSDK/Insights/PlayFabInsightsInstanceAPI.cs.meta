@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: c2e7ee83796bb834cbd6263a7a6d65ca
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 181360
+  packageName: Simple Account with Database
+  packageVersion: 1.0.2
+  assetPath: Assets/PlayFabSDK/Insights/PlayFabInsightsInstanceAPI.cs
+  uploadId: 456192

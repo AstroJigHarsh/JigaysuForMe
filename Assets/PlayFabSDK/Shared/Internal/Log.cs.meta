@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 5b55790eeab1b3c41a4f1381cbea1213
+timeCreated: 1462682372
+licenseType: Pro
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 181360
+  packageName: Simple Account with Database
+  packageVersion: 1.0.2
+  assetPath: Assets/PlayFabSDK/Shared/Internal/Log.cs
+  uploadId: 456192

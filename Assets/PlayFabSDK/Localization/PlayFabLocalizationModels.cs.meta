@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 772d6350724839b498944cab1b377fb5
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 181360
+  packageName: Simple Account with Database
+  packageVersion: 1.0.2
+  assetPath: Assets/PlayFabSDK/Localization/PlayFabLocalizationModels.cs
+  uploadId: 456192

@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 3ab3048b1bd63d747b28b2fe0b181743
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 181360
+  packageName: Simple Account with Database
+  packageVersion: 1.0.2
+  assetPath: Assets/PlayFabSDK/Data/PlayFabDataModels.cs
+  uploadId: 456192

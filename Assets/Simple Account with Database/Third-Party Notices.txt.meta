@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 0a0863b72c3ae421c8e4f9c7b27648b3
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 181360
+  packageName: Simple Account with Database
+  packageVersion: 1.0.2
+  assetPath: Assets/Simple Account with Database/Third-Party Notices.txt
+  uploadId: 456192

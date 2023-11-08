@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 1b20d57e2279b3a408268b20c2be2208
+timeCreated: 1468890373
+licenseType: Pro
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 181360
+  packageName: Simple Account with Database
+  packageVersion: 1.0.2
+  assetPath: Assets/PlayFabSDK/Shared/Internal/wsaReflectionExtensions.cs
+  uploadId: 456192

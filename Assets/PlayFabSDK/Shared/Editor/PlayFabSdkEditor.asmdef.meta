@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 8aa8a8085039f0e4ba1c8d6480d45262
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 181360
+  packageName: Simple Account with Database
+  packageVersion: 1.0.2
+  assetPath: Assets/PlayFabSDK/Shared/Editor/PlayFabSdkEditor.asmdef
+  uploadId: 456192

@@ -29,9 +29,12 @@ public class MoveBehaviour : GenericBehaviour
     void Start()
     {
 
-        if(GetComponent<PhotonView>().IsMine != true)
+        if(GetComponent<PhotonView>().IsMine == true)
         {
-            CanvasName.SetActive(true);
+            CanvasName.SetActive(false);
+        }
+        else
+        {
             Name.text = GetComponent<PhotonView>().Controller.NickName;
         }
         // Set up the references.

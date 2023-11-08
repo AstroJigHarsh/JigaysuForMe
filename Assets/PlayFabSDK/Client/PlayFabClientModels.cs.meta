@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 3a0a4ef9b600e6540b14561880293235
+timeCreated: 1468524875
+licenseType: Pro
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 181360
+  packageName: Simple Account with Database
+  packageVersion: 1.0.2
+  assetPath: Assets/PlayFabSDK/Client/PlayFabClientModels.cs
+  uploadId: 456192

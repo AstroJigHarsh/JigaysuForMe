@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: de33e60850dcd4726a647f9c7da9b84a
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 181360
+  packageName: Simple Account with Database
+  packageVersion: 1.0.2
+  assetPath: Assets/Simple Account with Database/Ressources/AccountData.asset
+  uploadId: 456192

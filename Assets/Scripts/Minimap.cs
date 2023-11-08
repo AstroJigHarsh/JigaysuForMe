@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
+using Photon;
 
 public class Minimap : MonoBehaviour
 {
@@ -13,23 +15,35 @@ public class Minimap : MonoBehaviour
 
     private void Update()
     {
-        normalized = Divide(
+        if (GetComponent<PhotonView>().IsMine == true)
+        {
+            normalized = Divide(
                 map3dParent.InverseTransformPoint(this.transform.position),
                 map3dEnd.position - map3dParent.position
             );
-        normalized.y = normalized.z;
-        mapped = Multiply(normalized, map2dEnd.localPosition);
-        mapped.z = 0;
-        playerInMap.localPosition = mapped;
+            normalized.y = normalized.z;
+            mapped = Multiply(normalized, map2dEnd.localPosition);
+            mapped.z = 0;
+            playerInMap.localPosition = mapped;
+        }
+            
     }
 
     private static Vector3 Divide(Vector3 a, Vector3 b)
     {
-        return new Vector3(a.x / b.x, a.y / b.y, a.z / b.z);
+        
+        
+            return new Vector3(a.x / b.x, a.y / b.y, a.z / b.z);
+        
     }
 
     private static Vector3 Multiply(Vector3 a, Vector3 b)
     {
-        return new Vector3(a.x * b.x, a.y * b.y, a.z * b.z);
+       
+        
+            return new Vector3(a.x * b.x, a.y * b.y, a.z * b.z);
+
+        
+        
     }
 }
