@@ -10,6 +10,8 @@ TagManager:
   - Car
   - Gate 3
   - Gate
+  - Bullet
+  - AKMBullet
   layers:
   - Default
   - TransparentFX

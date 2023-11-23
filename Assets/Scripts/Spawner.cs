@@ -1,14 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Photon.Pun;
 using PlayFab;
 using PlayFab.ClientModels;
-public class Spawner : MonoBehaviour
+public class Spawner : MonoBehaviourPunCallbacks
 {
-    public GameObject jigaysuPrefab;
+    public GameObject Jigyasu;
+    public GameObject Venti;
+    public GameObject SciFi;
+
+    public Canvas HealthSysGameOver;
+    public Canvas HealthSysHealthCanvas;
+    public Text HealthSysHealthText;
+    string Char;
+    GameObject Instance;
     // Start is called before the first frame update
     public void Start()
+    {
+        GetUserData();
+    }
+
+    public void GetUserData()
     {
         PlayFabClientAPI.GetUserData(new GetUserDataRequest(), OnDataRecieved,
             err =>
@@ -19,21 +31,48 @@ public class Spawner : MonoBehaviour
 
     public void OnDataRecieved(GetUserDataResult result)
     {
-        if (jigaysuPrefab == null && result.Data.ContainsKey("Player"))
+        if (result.Data.ContainsKey("Player"))
         {
-            if (result.Data["Player"].Value == "Jigyasu")
+            Char = result.Data["Player"].Value;
+            if (Char == "Jigyasu")
             {
-                Debug.LogFormat("We are Instantiating LocalJigyasuPlayer from {0}", Application.loadedLevelName);
-                // we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
-                PhotonNetwork.Instantiate(this.jigaysuPrefab.name, new Vector3(600f, 30f, 300f), Quaternion.identity, 0);
+                if (Jigyasu != null)
+                {
+                    Instance = PhotonNetwork.Instantiate(this.Jigyasu.name, new Vector3(600f, 30f, 300f), Quaternion.identity, 0);
+                    Debug.Log("Instantiated");
+                    Instance.GetComponent<NetworkedHealthSystem>().gameOverCanvas= HealthSysGameOver;
+                    Instance.GetComponent<NetworkedHealthSystem>().healthCanvas= HealthSysHealthCanvas;
+                    Instance.GetComponent<NetworkedHealthSystem>().healthText = HealthSysHealthText;
+                }
+            }
+            if (Char == "Lyney")
+            {
+                if (Venti != null)
+                {
+                    Instance = PhotonNetwork.Instantiate(this.Venti.name, new Vector3(600f, 30f, 300f), Quaternion.identity, 0);
+                    Debug.Log("Instantiated");
+                    Instance.GetComponent<NetworkedHealthSystem>().gameOverCanvas = HealthSysGameOver;
+                    Instance.GetComponent<NetworkedHealthSystem>().healthCanvas= HealthSysHealthCanvas;
+                    Instance.GetComponent<NetworkedHealthSystem>().healthText = HealthSysHealthText;
+                }
+            }
+            if (Char == "SciFi")
+            {
+                if(SciFi != null)
+                {
+                    Instance = PhotonNetwork.Instantiate(this.SciFi.name, new Vector3(600, 30, 300), Quaternion.identity, 0);
+                    Debug.Log("Instantiated");
+                    Instance.GetComponent<NetworkedHealthSystem>().gameOverCanvas = HealthSysGameOver;
+                    Instance.GetComponent<NetworkedHealthSystem>().healthCanvas= HealthSysHealthCanvas;
+                    Instance.GetComponent<NetworkedHealthSystem>().healthText = HealthSysHealthText;
+                }
             }
         }
     }
 
-
-
-
-   
-
-
+    public void LeaveRoomAndDestroy()
+    {
+        PhotonNetwork.LeaveRoom();
+        PhotonNetwork.Destroy(Instance);
+    }
 }

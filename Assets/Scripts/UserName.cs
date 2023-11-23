@@ -13,20 +13,38 @@ public class UserName : MonoBehaviour
 {
     [Header("Screens")]
     public GameObject LoginPanel;
+    public GameObject RegisterPanel;
     public GameObject Lobby;
     public GameObject Leaderboard;
     public GameObject ChoosePlayer;
+    public GameObject Store;
 
     [Header("Login Screen")]
     public TMP_InputField LoginEmailField;
     public TMP_InputField LoginPasswordField;
     public TMP_InputField LoginDisplayNameField;
     public Button LoginBtn;
+    public Button RegisterBtn;
+
+    [Header("Register Screen")]
+    public TMP_InputField RegisterEmailField;
+    public TMP_InputField RegisterDisplayNameField;
+    public TMP_InputField RegisterPasswordwordField;
+    public Button RegisterAccountBtn;
+    public Button BackBtn;
 
     [Header("Mischevious")]
     public GameObject LeaderListPrefab;
     public Transform LeaderBoardSpawner;
+    public TMP_Text AstroCoinAP;
+    public TMP_Text AccName;
+    public static UserName instance;
 
+    public void Awake()
+    {
+        instance = this;
+    }
+    
     public void Start()
     {
         if (PhotonNetwork.IsConnected != true)
@@ -42,22 +60,38 @@ public class UserName : MonoBehaviour
         Leaderboard.SetActive(false);
         Lobby.SetActive(true);
         ChoosePlayer.SetActive(false);
+        Store.SetActive(false);
+        
+    }
+
+    public void OpenRegistrationPanel()
+    {
+        LoginPanel.SetActive(false);
+        RegisterPanel.SetActive(true);
+        Leaderboard.SetActive(false);
+        Lobby.SetActive(false);
+        ChoosePlayer.SetActive(false);
+        Store.SetActive(false);
     }
     public void OpenLoginPanel()
     {
 
         LoginPanel.SetActive(true);
+        RegisterPanel.SetActive(false);
         Leaderboard.SetActive(false);
         Lobby.SetActive(false);
         ChoosePlayer.SetActive(false);
+        Store.SetActive(false);
     }
     public void OpenLeaderboardPanel()
     {
 
         LoginPanel.SetActive(false);
-        Leaderboard.SetActive(false);
-        Lobby.SetActive(true);
+        RegisterPanel.SetActive(false);
+        Leaderboard.SetActive(true);
+        Lobby.SetActive(false);
         ChoosePlayer.SetActive(false);
+        Store.SetActive(false);
     }
     public void OpenPlayerChoosePanel()
     {
@@ -65,6 +99,16 @@ public class UserName : MonoBehaviour
         Leaderboard.SetActive(false);
         Lobby.SetActive(false);
         ChoosePlayer.SetActive(true);
+        Store.SetActive(false);
+    }
+    public void OpenStore()
+    {
+        LoginPanel.SetActive(false);
+        RegisterPanel.SetActive(false);
+        Leaderboard.SetActive(false);
+        Lobby.SetActive(false);
+        ChoosePlayer.SetActive(false);
+        Store.SetActive(true);
     }
 
 
@@ -88,6 +132,7 @@ public class UserName : MonoBehaviour
         {
             Debug.Log("Error: " + err.ErrorMessage);
             LoginBtn.interactable = true;
+            RegisterBtn.interactable = true;
         });
 
         
@@ -100,6 +145,8 @@ public class UserName : MonoBehaviour
         if (result.InfoResultPayload.PlayerProfile != null)
             PhotonNetwork.NickName = result.InfoResultPayload.PlayerProfile.DisplayName;
 
+        AccName.text = PhotonNetwork.NickName;
+
 
         Debug.Log("Login Success");
         PlayFabClientAPI.GetUserData(new GetUserDataRequest(), OnDataRecieved,
@@ -110,7 +157,40 @@ public class UserName : MonoBehaviour
 
     }
 
-    
+
+    public void OnTryRegisterNewAccount()
+    {
+        BackBtn.interactable = false;
+        RegisterAccountBtn.interactable = false;
+
+        string email = RegisterEmailField.text;
+        string displayName = RegisterDisplayNameField.text;
+        string password = RegisterPasswordwordField.text;
+
+        RegisterPlayFabUserRequest req = new RegisterPlayFabUserRequest
+        {
+            Email = email,
+            DisplayName = displayName,
+            Password = password,
+            RequireBothUsernameAndEmail = false
+        };
+
+        PlayFabClientAPI.RegisterPlayFabUser(req,
+        res =>
+        {
+            BackBtn.interactable = true;
+            RegisterAccountBtn.interactable = true;
+            OpenLoginPanel();
+            Debug.Log(res.PlayFabId);
+        },
+        err =>
+        {
+            BackBtn.interactable = true;
+            RegisterAccountBtn.interactable = true;
+            Debug.Log("Error: " + err.ErrorMessage);
+        });
+    }
+
 
     public void SendLeaderboard()
     {
@@ -129,11 +209,31 @@ public class UserName : MonoBehaviour
          res =>
          {
              Debug.Log("Successfull leaderboard sent");
+             Send();
          },
         err =>
         {
             Debug.Log("Error: " + err.ErrorMessage);
         });
+    }
+
+    public void Send()
+    {
+        var request = new AddUserVirtualCurrencyRequest
+        {
+            VirtualCurrency = "AP",
+            Amount = 50
+        };
+        PlayFabClientAPI.AddUserVirtualCurrency(request, OnSuccess,
+            err =>
+            {
+                Debug.Log("Error: " + err.ErrorMessage);
+            });
+    }
+
+    private void OnSuccess(ModifyUserVirtualCurrencyResult result)
+    {
+        UserName.instance.GetVirtualCurrency();
     }
 
     public void GetLeaderboard()
@@ -180,7 +280,7 @@ public class UserName : MonoBehaviour
     {
         if (result != null && result.Data.ContainsKey("Player"))
         {
-            OpenLobbyPanel();
+            GetVirtualCurrency();
         }
         else
         {
@@ -194,7 +294,25 @@ public class UserName : MonoBehaviour
         {
             Data = new Dictionary<string, string>
             {
-                {"Player", "Jigyasu" }
+                {"Player", "Jigyasu"},
+
+
+            }
+        };
+        PlayFabClientAPI.UpdateUserData(request, OnDataSend,
+            err =>
+            {
+                Debug.Log("Error: " + err.ErrorMessage);
+            });
+    }
+    public void SendPlayerVenti()
+    {
+        var request = new UpdateUserDataRequest
+        {
+            Data = new Dictionary<string, string>
+            {
+                {"Player", "Venti"},
+
             }
         };
         PlayFabClientAPI.UpdateUserData(request, OnDataSend,
@@ -207,8 +325,22 @@ public class UserName : MonoBehaviour
     private void OnDataSend(UpdateUserDataResult result)
     {
         Debug.Log("Completed");
-        OpenLobbyPanel();
+        GetVirtualCurrency();
     }
 
+    public void GetVirtualCurrency()
+    {
+        PlayFabClientAPI.GetUserInventory(new GetUserInventoryRequest(), OnGetUserInventory,
+            err =>
+            {
+                Debug.Log("Error: " + err.ErrorMessage);
+            });
+    }
 
+    private void OnGetUserInventory(GetUserInventoryResult result)
+    {
+        int AstroCoins = result.VirtualCurrency["AP"];
+        AstroCoinAP.text = AstroCoins.ToString();
+        OpenLobbyPanel();
+    }
 }
